@@ -1,9 +1,10 @@
 import { comp } from './comp'
-const Card = () => {
-    const card = comp('div','card');
-    card.appendChild(comp('div','card-header','','Header'));
-    card.appendChild(comp('div','card-body bg-primary','','Body'));
-    card.appendChild(comp('div','card-footer','','footer'));
-    return card
+const Card = (title, description='') => {
+    const card = comp('div', 'card m-3');
+    const cardBody = card.appendChild(comp('div','card-body'));
+    cardBody.appendChild(comp('h5', 'card-title', '', title));
+    cardBody.appendChild(comp('p', 'card-text', '', description));
+    
+    return card;
 }
-export {Card};
+export { Card };
