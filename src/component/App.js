@@ -16,13 +16,6 @@ const App = (() => {
         for (const iterator of data) {
             projectDiv.appendChild(Card(iterator.name))
         }
-        // projectDiv.appendChild(Card('Asadf'));
-        // projectDiv.appendChild(Card('GSgsf'));
-        // projectDiv.appendChild(Card('Egdfg'));
-        // projectDiv.appendChild(Card('Ufhgfdg'));
-        // projectDiv.appendChild(Card('ERTEfsgs', 'ADfs sdfgsdg dsf gzsdfg fdsg dsfgsdfgsdfgasfg'));
-        // projectDiv.appendChild(Card('JTDghdgh dfg'));
-
         return projectDiv;
     };
 

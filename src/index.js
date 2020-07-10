@@ -15,11 +15,8 @@ const index = () => {
 };
 function handler(form){
     var lists=App.loadedData();
-  //  console.log(form);
     const a=form.querySelector('#title');
-
     lists.push(new Project(a.value));
-  
     localStorage.setItem('projects', JSON.stringify(lists))
 }
 index();
