@@ -1,9 +1,8 @@
-function Project(name,title='',description='',date='',priorty=''){
+function Project(name){
     this.name=name;
-    this.title=title;
-    this.description=description;
-    this.priorty=priorty;
-    this.date=date;
+    this.additems=(hashmap)=>{
+        
+    }
     
 }
 

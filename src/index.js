@@ -4,8 +4,10 @@ import { App } from './component/App'
 import {Project} from './component/Project'
 
 const index = () => {
-    const f=document.querySelector('form');
-    f.onsubmit=()=>handler(f);
+    const f1=document.querySelector('form');
+    f1.onsubmit=()=>handler(f1);
+    const f2=document.querySelector('#form2');
+    f2.onsubmit=()=>handler2(f2);
     const projects = document.querySelector('#projects');
     projects.appendChild(App.project());
 
@@ -13,6 +15,9 @@ const index = () => {
     lists.appendChild(App.List(8, 'safgsdg'));
     
 };
+const handler2=(form)=>{
+    alert('yes')
+}
 function handler(form){
     var lists=App.loadedData();
     const a=form.querySelector('#title');
