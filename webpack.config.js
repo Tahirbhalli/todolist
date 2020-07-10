@@ -3,7 +3,6 @@ const Minicss = require('mini-css-extract-plugin');
 
 module.exports = {
   module: {
-
     rules: [
       {
         test: /\.(scss|sass|css)$/,
@@ -18,6 +17,9 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         use: {
           loader: 'file-loader',
+          options: {
+            esModule: false,
+          },
         },
       },
       {
