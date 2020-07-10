@@ -18,7 +18,7 @@ This is A todo List. Where you can add multiple assignments to projects.
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/Tahirbhalli/Resturant-page/62e3fda7499e2a2a7bc306d10aa8c6c1ceecf4d2/dist/index.html)
+[Live Demo Link](https://rawcdn.githack.com/Tahirbhalli/todolist/8c2e421c4cc021b47aefa82ae8029dd9198a0dc7/dist/index.html)
 
 
 ## Authors
