@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import 'bootstrap/dist/css/bootstrap.css';
 import './styles/main.scss';
 import { App } from './component/App';
 import { Project } from './component/Project';
