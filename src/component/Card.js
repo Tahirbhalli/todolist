@@ -1,8 +1,22 @@
 import { comp } from './comp';
+import { List } from './List';
 // show assignments of tthe specific project
 
-const showAssignments = () => {
-  console.log('works poperly');
+const showAssignments = (title) => {
+  localStorage.setItem('user', title);
+  const temp = document.getElementById('temp');
+  if (temp !== null) {
+    temp.parentNode.removeChild(temp);
+  }
+
+  const ul = comp('ul', 'list-group list-group-flush', 'temp');
+  const data = JSON.parse(localStorage.getItem(title));
+  const divlist = document.querySelector('#lists');
+  data.forEach(element => {
+    console.log(element.title);
+    ul.appendChild(List(element.title));
+  });
+  divlist.appendChild(ul);
 };
 
 const Card = (title) => {
@@ -16,9 +30,8 @@ const Card = (title) => {
   att = document.createAttribute('data-target');
   att.value = '#model2';
   btn.setAttributeNode(att);
-  btn.addEventListener('click', () => localStorage.setItem('user', title));
   cardBody.appendChild(btn);
-  card.addEventListener('click', () => showAssignments());
+  card.addEventListener('click', () => showAssignments(title));
   return card;
 };
 // eslint-disable-next-line import/prefer-default-export

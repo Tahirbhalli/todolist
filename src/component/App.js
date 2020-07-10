@@ -1,5 +1,4 @@
 import { Card } from './Card';
-import { List } from './List';
 
 const App = (() => {
   let projectlist = [];
@@ -19,7 +18,7 @@ const App = (() => {
     // }
     if (data !== '') {
       data.forEach(element => {
-        projectDiv.appendChild(Card(element.name));
+        projectDiv.appendChild(Card(element));
       });
     }
 
@@ -28,9 +27,9 @@ const App = (() => {
 
   return {
     project,
-    List,
     loadedData,
   };
 })();
 
+// eslint-disable-next-line import/prefer-default-export
 export { App };

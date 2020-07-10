@@ -1,13 +1,6 @@
 import { comp } from './comp';
 
-const List = (n, text) => {
-  const ul = comp('ul', 'list-group list-group-flush');
+const List = (text) => comp('li', 'list-group-item', '', text);
 
-  for (let i = 1; i <= n; i++) {
-    ul.appendChild(comp('li', 'list-group-item', '', text));
-  }
-
-  return ul;
-};
-
+// eslint-disable-next-line import/prefer-default-export
 export { List };
