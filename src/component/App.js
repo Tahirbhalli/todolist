@@ -13,9 +13,6 @@ const App = (() => {
   const project = () => {
     const projectDiv = document.createElement('div');
     const data = loadedData();
-    // for (let i = 0; i < data.length; i += 1) {
-    //   projectDiv.appendChild(Card(data[i].name));
-    // }
     if (data !== '') {
       data.forEach(element => {
         projectDiv.appendChild(Card(element));

@@ -1,6 +1,5 @@
 import { comp } from './comp';
 import { List } from './List';
-// show assignments of tthe specific project
 
 const showAssignments = (title) => {
   localStorage.setItem('user', title);

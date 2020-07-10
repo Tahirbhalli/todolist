@@ -18,12 +18,6 @@ const handler2 = (form) => {
       keyvalue1.push(element);
     });
   }
-  // let val1 = [];
-  // if (localStorage.getItem(user) !== null) {
-  //   val1 = JSON.parse(localStorage.getItem(user));
-  // }
-  // val1.push(keyvalue1);
-
   localStorage.setItem(user, JSON.stringify(keyvalue1));
 };
 function handler(form) {
@@ -34,7 +28,6 @@ function handler(form) {
   prlist.push(a.value);
   localStorage.setItem('projects', JSON.stringify(prlist));
   lists.push(new Project(a.value));
-  // alert(lists)
   localStorage.setItem(a.value, null);
 }
 const index = () => {
