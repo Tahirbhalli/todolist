@@ -1,16 +1,25 @@
-import {Card} from './Card'
+import { Card } from './Card';
+import { List } from './List';
 
-const App = () => {
-    var app=document.createElement('div');
+const App = (() => {
+    const project = () => {
+        const projectDiv = document.createElement('div');
 
-    app.appendChild(Card('Asadf'));
-    app.appendChild(Card('GSgsf'));
-    app.appendChild(Card('Egdfg'));
-    app.appendChild(Card('Ufhgfdg'));
-    app.appendChild(Card('ERTEfsgs', 'ADfs sdfgsdg dsf gzsdfg fdsg dsfgsdfgsdfgasfg'));
-    app.appendChild(Card('JTDghdgh dfg'));
+        projectDiv.appendChild(Card('Asadf'));
+        projectDiv.appendChild(Card('GSgsf'));
+        projectDiv.appendChild(Card('Egdfg'));
+        projectDiv.appendChild(Card('Ufhgfdg'));
+        projectDiv.appendChild(Card('ERTEfsgs', 'ADfs sdfgsdg dsf gzsdfg fdsg dsfgsdfgsdfgasfg'));
+        projectDiv.appendChild(Card('JTDghdgh dfg'));
 
-    return app;
+        return projectDiv;
+    };
 
-}
-export {App};
+    return {
+        project,
+        List,
+    } ;
+
+})();
+
+export { App };

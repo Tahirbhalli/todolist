@@ -4,6 +4,9 @@ import { App } from './component/App'
 
 const index = () => {
     const projects = document.querySelector('#projects');
-    projects.appendChild(App());
+    projects.appendChild(App.project());
+
+    const lists = document.querySelector('#lists');
+    lists.appendChild(App.List(8, 'safgsdg'));
 };
 index();

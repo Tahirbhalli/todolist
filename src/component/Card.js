@@ -1,4 +1,5 @@
-import { comp } from './comp'
+import { comp } from './comp';
+
 const Card = (title, description='') => {
     const card = comp('div', 'card m-3');
     const cardBody = card.appendChild(comp('div','card-body'));
