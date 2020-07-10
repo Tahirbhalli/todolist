@@ -2,7 +2,6 @@ const Htmlwebpackplugin = require('html-webpack-plugin');
 const Minicss = require('mini-css-extract-plugin');
 
 module.exports = {
-  devtool: 'inline-source-map',
   module: {
 
     rules: [

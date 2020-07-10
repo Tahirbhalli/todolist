@@ -12,7 +12,6 @@ const showAssignments = (title) => {
   const data = JSON.parse(localStorage.getItem(title));
   const divlist = document.querySelector('#lists');
   data.forEach(element => {
-    console.log(element.title);
     ul.appendChild(List(element.title));
   });
   divlist.appendChild(ul);
