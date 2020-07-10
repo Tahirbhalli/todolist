@@ -3,19 +3,25 @@ import { List } from './List';
 import { comp } from './comp'
 
 const App = (() => {
-    const form=()=>{
-        const fm=comp('form','')
+    var projectlist=new Array();
+    const loadedData=()=>{
+        var data=localStorage.getItem('projects');
+        projectlist = JSON.parse(data);
+        return projectlist;
     }
     const project = () => {
-
+       
         const projectDiv = document.createElement('div');
-
-        projectDiv.appendChild(Card('Asadf'));
-        projectDiv.appendChild(Card('GSgsf'));
-        projectDiv.appendChild(Card('Egdfg'));
-        projectDiv.appendChild(Card('Ufhgfdg'));
-        projectDiv.appendChild(Card('ERTEfsgs', 'ADfs sdfgsdg dsf gzsdfg fdsg dsfgsdfgsdfgasfg'));
-        projectDiv.appendChild(Card('JTDghdgh dfg'));
+        const data=loadedData();
+        for (const iterator of data) {
+            projectDiv.appendChild(Card(iterator.name))
+        }
+        // projectDiv.appendChild(Card('Asadf'));
+        // projectDiv.appendChild(Card('GSgsf'));
+        // projectDiv.appendChild(Card('Egdfg'));
+        // projectDiv.appendChild(Card('Ufhgfdg'));
+        // projectDiv.appendChild(Card('ERTEfsgs', 'ADfs sdfgsdg dsf gzsdfg fdsg dsfgsdfgsdfgasfg'));
+        // projectDiv.appendChild(Card('JTDghdgh dfg'));
 
         return projectDiv;
     };
@@ -23,6 +29,7 @@ const App = (() => {
     return {
         project,
         List,
+        loadedData,
     } ;
 
 })();

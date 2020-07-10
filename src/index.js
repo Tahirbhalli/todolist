@@ -12,18 +12,14 @@ const index = () => {
     const lists = document.querySelector('#lists');
     lists.appendChild(App.List(8, 'safgsdg'));
     
-    
 };
-var list=new Array();
-const setitems=()=>{
-    localStorage.setItem('projects', JSON.stringify(list))
-}
 function handler(form){
-    console.log(form);
+    var lists=App.loadedData();
+  //  console.log(form);
     const a=form.querySelector('#title');
-    alert(a.value)
-    list.push(new Project(a.value));
-    setitems();
-    localStorage.setItem('asa','asasa');
+
+    lists.push(new Project(a.value));
+  
+    localStorage.setItem('projects', JSON.stringify(lists))
 }
 index();
