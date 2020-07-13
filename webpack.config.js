@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
+
 import Htmlwebpackplugin from 'html-webpack-plugin';
 import Minicss from 'mini-css-extract-plugin';
 
