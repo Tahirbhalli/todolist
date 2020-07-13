@@ -1,5 +1,5 @@
-import { comp } from './comp';
-import { List } from './List';
+import comp from './comp';
+import List from './List';
 
 const showAssignments = (title) => {
   localStorage.setItem('user', title);
@@ -33,5 +33,5 @@ const Card = (title) => {
   card.addEventListener('click', () => showAssignments(title));
   return card;
 };
-// eslint-disable-next-line import/prefer-default-export
-export { Card };
+
+export default Card;

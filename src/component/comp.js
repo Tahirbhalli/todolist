@@ -5,5 +5,5 @@ const comp = (element, classes = '', id = '', text = '') => {
   if (text !== '') el.innerText = text;
   return el;
 };
-// eslint-disable-next-line import/prefer-default-export
-export { comp };
+
+export default comp;

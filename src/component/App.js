@@ -1,4 +1,4 @@
-import { Card } from './Card';
+import Card from './Card';
 
 const App = (() => {
   let projectlist = [];
@@ -28,5 +28,4 @@ const App = (() => {
   };
 })();
 
-// eslint-disable-next-line import/prefer-default-export
-export { App };
+export default App;

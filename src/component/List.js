@@ -1,15 +1,18 @@
-import { comp } from './comp';
+import comp from './comp';
 
 const deleteitem = (element) => {
   const user = localStorage.getItem('user');
   const data = JSON.parse(localStorage.getItem(user));
   const newdata = [];
-  // eslint-disable-next-line no-restricted-syntax
-  for (const iterator of data) {
+
+  for (let i = 0; i < data.length; i += 1) {
+    const iterator = data[i];
+
     if (element !== iterator.title) {
       newdata.push(iterator);
     }
   }
+
   localStorage.setItem(user, JSON.stringify(newdata));
   window.location.reload();
 };
@@ -18,7 +21,8 @@ const List = (element) => {
   const li = comp('li', 'list-group-item');
   const input = comp('input');
   input.setAttribute('type', 'checkbox');
-  input.addEventListener('change', function () {
+
+  input.addEventListener('change', function clickListener() {
     if (this.checked) {
       const btn = comp('button', 'btn btn-success', `${element.title}btn`, 'delete');
       btn.addEventListener('click', () => deleteitem(element.title));
@@ -27,6 +31,7 @@ const List = (element) => {
       li.removeChild(document.getElementById(`${element.title}btn`));
     }
   });
+
   const h3 = comp('h3', '', '', element.title);
   const p = comp('p', '', '', element.description);
   const date = comp('p', '', '', element.date);
@@ -42,5 +47,4 @@ const List = (element) => {
   return li;
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { List };
+export default List;

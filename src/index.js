@@ -1,6 +1,6 @@
 import './styles/main.scss';
-import { App } from './component/App';
-import { Project } from './component/Project';
+import App from './component/App';
+import Project from './component/Project';
 
 const handler2 = (form) => {
   const user = localStorage.getItem('user');
