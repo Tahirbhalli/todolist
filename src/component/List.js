@@ -1,6 +1,9 @@
 import { comp } from './comp';
 
 const List = (element) => {
+  const input = comp('input');
+  input.setAttribute('type', 'checkbox');
+
   const h3 = comp('h3', '', '', element.title);
   const p = comp('p', '', '', element.description);
   const date = comp('p', '', '', element.date);
@@ -8,6 +11,7 @@ const List = (element) => {
 
   const li = comp('li', 'list-group-item');
 
+  li.appendChild(input);
   li.appendChild(h3);
   li.appendChild(p);
   li.appendChild(date);
