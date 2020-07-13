@@ -9,10 +9,11 @@ const showAssignments = (title) => {
   }
 
   const ul = comp('ul', 'list-group list-group-flush', 'temp');
-  const data = JSON.parse(localStorage.getItem(title));
+  let data = JSON.parse(localStorage.getItem(title));
+  data = data.sort((a, b) => b.priority - a.priority);
   const divlist = document.querySelector('#lists');
   data.forEach(element => {
-    ul.appendChild(List(element.title));
+    ul.appendChild(List(element));
   });
   divlist.appendChild(ul);
 };
