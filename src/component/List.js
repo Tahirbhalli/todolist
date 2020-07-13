@@ -1,6 +1,6 @@
 import { comp } from './comp';
 
-const List = (element) => {  
+const List = (element) => {
   const h3 = comp('h3', '', '', element.title);
   const p = comp('p', '', '', element.description);
   const date = comp('p', '', '', element.date);
