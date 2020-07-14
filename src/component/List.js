@@ -21,14 +21,23 @@ const List = (element) => {
   const li = comp('li', 'list-group-item');
   const input = comp('input');
   input.setAttribute('type', 'checkbox');
-
   input.addEventListener('change', function clickListener() {
     if (this.checked) {
-      const btn = comp('button', 'btn btn-success', `${element.title}btn`, 'delete');
-      btn.addEventListener('click', () => deleteitem(element.title));
-      li.appendChild(btn);
+      const btn1 = comp('button', 'btn btn-success', `${element.title}btndelete`, 'delete');
+      btn1.addEventListener('click', () => deleteitem(element.title));
+      li.appendChild(btn1);
+      const btn2 = comp('button', 'btn btn-success ml-2', `${element.title}btnedit`, 'edit');
+      let att = document.createAttribute('data-toggle');
+      att.value = 'modal';
+      btn2.setAttributeNode(att);
+      att = document.createAttribute('data-target');
+      att.value = '#model3';
+      btn2.setAttributeNode(att);
+      btn2.onclick = localStorage.setItem('title', element.title);
+      li.appendChild(btn2);
     } else {
-      li.removeChild(document.getElementById(`${element.title}btn`));
+      li.removeChild(document.getElementById(`${element.title}btndelete`));
+      li.removeChild(document.getElementById(`${element.title}btnedit`));
     }
   });
 

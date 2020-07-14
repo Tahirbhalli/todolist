@@ -5,7 +5,7 @@ const App = (() => {
   const loadedData = () => {
     const data = localStorage.getItem('projects');
     if (data === null) {
-      return [];
+      return JSON.parse(localStorage.setItem('projects', JSON.stringify(['default'])));
     }
     projectlist = JSON.parse(data);
     return projectlist;
@@ -13,12 +13,10 @@ const App = (() => {
   const project = () => {
     const projectDiv = document.createElement('div');
     const data = loadedData();
-    if (data !== '') {
-      data.forEach(element => {
-        projectDiv.appendChild(Card(element));
-      });
-    }
 
+    data.forEach(element => {
+      projectDiv.appendChild(Card(element));
+    });
     return projectDiv;
   };
 
